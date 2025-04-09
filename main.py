@@ -28,7 +28,7 @@ if __name__ == "__main__":
             encoded_grib = saildoc_func.encode_saildocs_grib_file(grib_path)
 
             # send the encoded GRIB to InReach
-          #  inreach_func.send_messages_to_inreach(garmin_reply_url, encoded_grib)
+            inreach_func.send_messages_to_inreach(garmin_reply_url, encoded_grib)
             print('encoded_grib : ', encoded_grib)
 
         # wait for the next check in 60 seconds

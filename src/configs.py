@@ -8,12 +8,12 @@ LIST_OF_PREVIOUS_MESSAGES_FILE_LOCATION = "./files/prev_messages.txt"
 SCOPES = ['https://mail.google.com/']
 
 # E-Mails and Links
-GMAIL_ADDRESS = "FILL IN"
+GMAIL_ADDRESS = "gregoire.grib.inreach@gmail.com"
 SERVICE_EMAIL = "no.reply.inreach@garmin.com"
 BASE_GARMIN_REPLY_URL = 'explore.garmin.com'
 SAILDOCS_EMAIL_QUERY = "query@saildocs.com"
 SAILDOCS_RESPONSE_EMAIL = "query-reply@saildocs.com"
-INREACH_BASE_URL_POST_REQUEST_EUR = 'https://eur.explore.garmin.com/TextMessage/TxtMsg' 
+INREACH_BASE_URL_POST_REQUEST_EUR = 'https://eur.explore.garmin.com/TextMessage/TxtMsg'
 INREACH_BASE_URL_POST_REQUEST_DEFAULT = 'https://explore.garmin.com/TextMessage/TxtMsg' 
 
 # E-Mail Headers
@@ -36,6 +36,16 @@ INREACH_HEADERS = {
 INREACH_COOKIES = {
     'BrowsingMode': 'Desktop',
 }
+
+# INREACH_COOKIES = {
+#     'account.sid': 's%3A8pLDroFXAGazUkYb6xByotZtMhrL7oDB.GyvGjCb3n9Hs6Zr3rYNTCqOaDYSVpFhFz1qNGpOLpmM',
+#     'GARMIN-SSO': '1',
+#     'GARMIN-SSO-CUST-GUID': 'eab11982-30bd-44fe-840c-78b68dbd5b02',
+#     'x-csrf-token': 'EKLGBvGg-r_ox-Kv4A2Cz18gQFo2WCmssvnI',
+#     'BrowsingMode': 'Desktop',
+#     # Ajoute aussi 'BrowsingMode': 'Desktop' si besoin
+# }
+
 
 # Others
 MESSAGE_SPLIT_LENGTH = 120 # Save length as the message got cut sometimes

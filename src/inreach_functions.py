@@ -63,6 +63,7 @@ def _post_request_to_inreach(url, message_str):
     Response: A Response object containing the server's response to the request.
     """
     guid = url.split('extId=')[1].split('&adr')[0]
+    print('message :', message_str)
     data = {
         'ReplyAddress': configs.GMAIL_ADDRESS,
         'ReplyMessage': message_str,
@@ -72,7 +73,9 @@ def _post_request_to_inreach(url, message_str):
 
     response = requests.post(url, cookies=configs.INREACH_COOKIES, headers=configs.INREACH_HEADERS, data=data)
     if response.status_code == 200:
+        print("response status :", response.status_code)
         print('Reply to InReach Sent:', message_str)
+        time.sleep(configs.DELAY_BETWEEN_MESSAGES)
     else:
         print('Error sending part:', message_str)
         print(f'Status Code: {response.status_code}')

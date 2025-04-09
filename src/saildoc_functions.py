@@ -45,7 +45,11 @@ def wait_for_saildocs_response(auth_service, time_sent):
     """
     for _ in range(60): # loop for a maximum of 60 iterations (10 seconds sleep each)
         time.sleep(10) # sleep for 10 seconds before checking for new emails
-        last_response = email_func._search_gmail_messages(auth_service, configs.SAILDOCS_RESPONSE_EMAIL)[0]
+        messages = email_func._search_gmail_messages(auth_service, configs.SAILDOCS_RESPONSE_EMAIL)
+        if not messages:
+            print("No SailDocs response yet...")
+            continue
+        last_response = messages[0]
         time_received = pd.to_datetime(auth_service.users().messages().get(userId='me', id=last_response['id']).execute()['payload']['headers'][-1]['value'].split('(UTC)')[0])
         if time_received > time_sent: # compare the received timestamp with the timestamp of the SailDocs request
             return last_response
